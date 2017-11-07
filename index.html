@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice 2</title>
+  </head>
+  <body>
+    <form>
+      Note 1 : <input type="text" id="val1" name="text"/><hr>
+      Note 2 : <input type="text" id="val2" name="text"/><hr>
+      Note 3 : <input type="text" id="val3" name="text"/><hr>
+      Note 4 : <input type="text" id="val4" name="text"/><hr>
+      Note 5 : <input type="text" id="val5" name="text"/><hr>
+      <button>Validez</button>
+    </form>
+    <style>
+      hr{
+        width: 300px;
+        margin-left: 0;
+      }
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+      $(function(){
+        $('button').click(function(){
+          //Valeur des notes saisies
+          var valeur1 = $('#val1').val();
+          var valeur2 = $('#val2').val();
+          var valeur3 = $('#val3').val();
+          var valeur4 = $('#val4').val();
+          var valeur5 = $('#val5').val();
+          // la note + note ect... diviser par 5 (number permet d'additionner)
+          var result = (Number(valeur1) + Number(valeur2) + Number(valeur3) + Number(valeur4) + Number(valeur5)) /5;
+          alert(valeur1 + ' + ' + valeur2 + ' + ' + valeur3 + ' + ' + valeur4 + ' + ' + valeur5 + ' = ' + result + ' de moyenne.');
+          if(result >= 0 && result < 10){
+            alert(' Tu es en dessous de la moyenne');
+          }else if(result >= 10 && result <13){
+            alert('Tu es moyen');
+          }else if (result >= 13 && result < 16){
+            alert('C\'est bien');
+          }else if (result >= 16 && result < 20){
+            alert('C\'est très bien');
+          }else if (result == 20){
+            alert('Tu es un surdoué ou un bon menteur')
+          }else{
+            alert('Rentre quelque chose de valide -_-');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
